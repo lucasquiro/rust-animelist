@@ -1,0 +1,17 @@
+[package]
+name = "ani_obsidian"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# CLI
+clap = { version = "4.4", features = ["derive"] }
+
+# Fechas
+chrono = { version = "0.4", features = ["serde"] }
+
+# API y JSON
+reqwest = { version = "0.11", features = ["json", "blocking"] } # Usamos 'blocking' para simplificar si no necesitas async pura
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+home = "0.5.12"

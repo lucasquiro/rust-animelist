@@ -1,0 +1,31 @@
+{
+  "boveda_path": "/home/douner/Dropbox/Obsidean/Anime list",
+  "final_absolute_path": "/home/douner/Dropbox/Obsidean/Anime list/Anime/Recursos/Portadas",
+  "final_relative_path": "/Anime/Recursos/Portadas",
+  "config_path": "/home/douner/.config/Anime-Obsidean",
+  "cover_size": 90,
+  "sistema_calificacion": 1,
+  "usar_emojis": true,
+  "preferencia_nombre": "Propio",
+  "fecha_corte_historico": "2026-07-15"
+}
+
+// boveda_path: Es la ruta donde se encuentra la boveda de obsidean debe ser un path y dentro debe tener una carpeta .obsidean
+// final_absolute_path: Es la ruta donde se guardaran las imagenes de la boveda, condiciones: debe ser distinto a boveda_path, debe estar dentro de boveda_path y tiene que estar por lo menos una carpeta por debajo de boveda_path
+// final_relative_path: Es lo mismo que final_absolute_path pero eliminando Boveda_path
+// config_path: debe ser exactamente eso, lo unico que deberia variar seria el usuario
+// cover_size: Es el tamaño de la imagen en el HTML de obsidean, debe ser un numero entre 50 y 200
+// sistema_calificacion: es el tipo de modo en el que se calificaran los animes
+//         1- tipos
+//         2- Del 1 al 10
+//         3- Del 1 al 5
+//         4- No quieres calificar los animes
+// usar_emojis: si la calificacion es = 1 se puede colocar emojis en el nombre en base a si te gusto o no, es un valor boleano pero solo puede ser true si sistema de calificacion es = 1, en todos los demas es false, pero si sistema de clasificion es 1 este puede ser true o false
+// preferencia_nombre: es como preferis que se llamen a los nombres, es un dato tipo string y los unicos valores validos son:
+//         1- Propio
+//         2- Romaji Japones
+//         3- Ingles
+//         4- Nativo Japones
+// fecha_corte_historico: es la ultima fecha exacta en la que recuerdas haber visto un anime, todos los demas que no sepas la fecha se pondran por detras de este la unica condicion es que debe ser este formato: YYYY-MM-DD
+
+// /home/douner/Dropbox/Obsidean/Anime list

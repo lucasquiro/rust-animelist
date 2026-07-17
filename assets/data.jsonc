@@ -1,0 +1,137 @@
+{
+  "anilist_id": 116147,
+  "mal_id": null,
+
+  "metadata": {
+    "titulos": {
+      "principal": "Horimiya",
+      "romaji": "Horimiya",
+      "english": "Horimiya",
+      "native": "ホリミヤ",
+      "sinonimos": [
+        "Hori-san to Miyamura-kun"
+      ]
+    },
+
+    "tipo": "TV",
+    "estado": "FINISHED",
+    "temporada": "WINTER",
+    "año": 2021,
+
+    "episodios": 13,
+    "duracion": 24,
+
+    "generos": [
+      "Romance",
+      "Comedy",
+      "Slice of Life"
+    ],
+
+    "tags": [
+      "School",
+      "Coming of Age",
+      "Relationship",
+      "Romantic Comedy"
+    ],
+
+    "estudios": [
+      "CloverWorks"
+    ],
+
+    "origen": "MANGA",
+
+    "clasificacion": "PG-13",
+
+    "popularidad": {
+      "score": 82,
+      "favoritos": 95000,
+      "popularidad": 480000,
+      "ranking": 186
+    },
+
+    "imagenes": {
+      "cover": {
+        "large": "...",
+        "medium": "..."
+      },
+      "banner": "..."
+    },
+
+    "fechas": {
+      "inicio": "2021-01-10",
+      "fin": "2021-04-04"
+    },
+
+    "relaciones": {
+      "precuela": [],
+      "secuela": [
+        163132
+      ],
+      "ovas": [],
+      "peliculas": [],
+      "spin_off": []
+    },
+
+    "streaming": [
+      {
+        "sitio": "Crunchyroll",
+        "url": "..."
+      }
+    ]
+  },
+
+  "usuario": {
+    "mi_progreso": "finalizado",
+    // abandonado: Consumo interrumpido sin intención de retomar a corto plazo.
+    // pendiente: Queda mas contenido por ver pero lo dejo en espera.
+    // finalizado: Consumo completado de la totalidad de la obra existente, sin previsión de nuevo contenido.
+    // al dia: Consumo de todo el contenido disponible hasta la fecha actual; esperando nueva emisión.
+    // viendo: Consumo activo y actual, ya sea porque el anime es muy largo o porque se esta emitiendo.
+    "gusto": 2,
+    // 0- No me gusto
+    // 1- Neutral
+    // 2- Me encanto
+    // 3- Es de mis favoritos
+    "contenido-visto": {
+      "temporadas": 2,
+      "peliculas": 0,
+      "ovas": 0
+    },
+
+    "opinion-notas": "Uno de los mejores romances que vi.",
+
+    "historial_visualizacion": {
+      "contenido_sin_datos": {
+        "periodo": "Antes de 2023-11",
+        "que_incluye": "0t"
+        // 0t: Es un valor sentinela, si es = 0t significa que se sabe la informacion de cuando se vio todo el contenido.
+        // Si es > 0t significa que hay contenido que no se sabe cuando se vio y se pone por detras de la fecha de corte historico
+      },
+
+      "temporada_1": {
+        "año_visto": 2024,
+        "comienzo": "2024-08-10",
+        "fin": "2024-08-11",
+        "detalle": ""
+      },
+
+      "temporada_2": {
+        "año_visto": 2025,
+        "comienzo": "2025-07-03",
+        "fin": "2025-07-04",
+        "detalle": ""
+      }
+    },
+
+    "fechas": {
+      "agregado": "2024-11-21",
+      "ultima_actualizacion": "2025-07-09"
+      // agregado: es la fecha en la que se agrego el anime a la boveda
+    },
+
+    "rewatch": {
+      "cantidad": 1,
+      "ultimo": "2026-07-03"
+    }
+  }
+}
