@@ -1,0 +1,107 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE user_anime (
+    id_local INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    id_anilist INTEGER NOT NULL,
+
+    estado TEXT,
+
+    temporadas_vistas INTEGER DEFAULT 0,
+    peliculas_vistas INTEGER DEFAULT 0,
+    ovas_vistas INTEGER DEFAULT 0,
+    onas_vistas INTEGER DEFAULT 0,
+
+    opinion_notas TEXT,
+
+    add_db_date TEXT NOT NULL,
+    edit_db_date TEXT,
+
+    score REAL,
+    gusto TEXT,
+
+    favorite INTEGER NOT NULL DEFAULT 0,
+
+    db_version INTEGER NOT NULL DEFAULT 1,
+
+    FOREIGN KEY (id_anilist)
+        REFERENCES anime_info(id_anilist)
+        ON DELETE RESTRICT
+);
+
+CREATE TABLE anime_info (
+    id_anilist INTEGER PRIMARY KEY,
+
+    id_mal INTEGER,
+
+    description TEXT,
+
+    format TEXT,
+    status TEXT,
+
+    episodes INTEGER,
+    duration INTEGER,
+
+    chapters INTEGER,
+    volumes INTEGER,
+
+    season TEXT,
+    season_year INTEGER,
+
+    source TEXT,
+
+    average_score REAL,
+    mean_score REAL,
+
+    is_adult INTEGER NOT NULL DEFAULT 0,
+
+    country_of_origin TEXT,
+
+    site_url TEXT,
+
+    start_date TEXT,
+    end_date TEXT,
+
+    cover_extra_large TEXT,
+    cover_large TEXT,
+    cover_medium TEXT,
+    cover_color TEXT,
+
+    banner_image TEXT,
+
+    cover_path TEXT,
+    banner_path TEXT
+);
+
+CREATE TABLE anime_titles (
+    id_anilist INTEGER PRIMARY KEY,
+
+    romaji TEXT,
+    english TEXT,
+    native TEXT,
+
+    user_title TEXT,
+    user_preferred TEXT,
+
+    synonyms TEXT,
+
+    FOREIGN KEY (id_anilist)
+        REFERENCES anime_info(id_anilist)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE anime_cache (
+    id_anilist INTEGER PRIMARY KEY,
+
+    last_update_date TEXT,
+    last_update_time TEXT,
+
+    priority INTEGER NOT NULL DEFAULT 0,
+
+    sync INTEGER NOT NULL DEFAULT 0,
+
+    FOREIGN KEY (id_anilist)
+        REFERENCES anime_info(id_anilist)
+        ON DELETE CASCADE
+);
+

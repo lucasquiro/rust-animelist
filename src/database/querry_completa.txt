@@ -1,0 +1,90 @@
+query ($search: String) {
+  Media(search: $search, type: ANIME) {
+
+    id
+    idMal
+
+    title {
+      romaji
+      english
+      native
+      userPreferred
+    }
+
+    synonyms
+
+    description(asHtml: false)
+
+    format
+    status
+    episodes
+    duration
+    chapters
+    volumes
+
+    season
+    seasonYear
+
+    source
+
+    averageScore
+    meanScore
+
+    isAdult
+    countryOfOrigin
+
+    genres
+
+    tags {
+      id
+      name
+      description
+      category
+      rank
+      isMediaSpoiler
+      isGeneralSpoiler
+    }
+
+    coverImage {
+      extraLarge
+      large
+      medium
+      color
+    }
+
+    bannerImage
+
+    startDate {
+      year
+      month
+      day
+    }
+
+    endDate {
+      year
+      month
+      day
+    }
+
+    relations {
+      edges {
+        relationType
+      }
+      nodes {
+        id
+        type
+        format
+        status
+
+        title {
+          userPreferred
+        }
+
+        coverImage {
+          large
+        }
+      }Untitled
+    }
+
+  }
+}

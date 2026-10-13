@@ -1,0 +1,81 @@
+query ($id: Int) {
+  Media(id: $id, type: ANIME) {
+
+    id
+    idMal
+
+    title {
+      romaji
+      english
+      native
+      userPreferred
+    }
+
+    synonyms
+
+    description(asHtml: false)
+
+    format
+    status
+    episodes
+    duration
+
+    season
+    seasonYear
+
+    source
+
+    isAdult
+    countryOfOrigin
+
+    genres
+
+    tags {
+      name
+      isMediaSpoiler
+      isGeneralSpoiler
+    }
+
+    coverImage {
+      extraLarge
+      large
+      medium
+      color
+    }
+
+    bannerImage
+
+    trailer {
+      site
+    }
+
+    startDate {
+      year
+      month
+      day
+    }
+
+    endDate {
+      year
+      month
+      day
+    }
+
+    relations {
+      nodes {
+        id
+        type
+        format
+        status
+
+        title {
+          userPreferred
+        }
+
+        coverImage {
+          large
+        }
+      }
+    }
+  }
+}

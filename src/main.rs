@@ -1,6 +1,7 @@
 // 1. Esto le dice a Rust: "Busca un archivo llamado config.rs en esta misma carpeta y trátalo como un módulo"
 mod config;
 mod utils;
+mod anime;
 
 
 // Traemos cargar_config al alcance[cite: 1]
@@ -12,9 +13,10 @@ use crate::utils::solicitar_numero;
 
 const OPCIONES_VALIDAS: [&str; 2] = ["ANIMES", "Editar configuración"];
 
-fn main() {
+#[tokio::main]
+async fn main() {
 
-    let _config_data: Config;
+    let config_data: Config;
 
     // Primero verificamos si el archivo de configuración existe en caso de que si, cargamos las variables en memoria, y si no lo creamos
 
@@ -22,12 +24,12 @@ fn main() {
         println!("El archivo de configuración existe. Cargando...");
         
         // Cargamos el JSON directamente a la variable en memoria
-        _config_data = cargar_config().expect("Error crítico: El archivo config.json está corrupto o no es válido");
+        config_data = cargar_config().expect("Error crítico: El archivo config.json está corrupto o no es válido");
     } else {
         // Crear_config() crea el archivo y ruta de configuracion con un archivo vacio
         config::crear_config();
 
-        // Ahora llamamos a cada pregunta de forma individual (en lugar de preguntas_config())
+        // Ahora llamamos a cada pregunta de forma individual
         // para poder reutilizarlas más adelante en la edición de configuración.
         let boveda_path = config::pregunta_boveda_path();
         let (final_absolute_path, final_relative_path) = config::pregunta_imagenes_path(&boveda_path);
@@ -37,7 +39,7 @@ fn main() {
         let fecha_corte_historico = config::pregunta_fecha_corte();
         let config_path = config::obtener_ruta_carpeta_base();
 
-        _config_data = Config {
+        config_data = Config {
             boveda_path,
             final_absolute_path,
             final_relative_path,
@@ -52,7 +54,7 @@ fn main() {
         // Necesitamos la ruta donde vive el config.json para pasársela a rellenar_config()
         if let Some(ruta_guardado) = config::obtener_ruta_config() {
             // Una ves que se hicieron las preguntas, se guarda el config.json
-            match config::rellenar_config(&_config_data, &ruta_guardado) {
+            match config::rellenar_config(&config_data, &ruta_guardado) {
                 Ok(()) => println!("Configuración guardada correctamente."),
                 Err(e) => eprintln!("Error al guardar la configuración: {}", e),
             }
@@ -81,7 +83,7 @@ fn main() {
 
         match opciones {
             1 => {
-                anime();
+                anime::preguntas_anime(config_data).await;
                 break;
             }
             2 => {
@@ -94,8 +96,4 @@ fn main() {
             }
         }
     }
-}
-
-fn anime() {
-
 }
