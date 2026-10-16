@@ -52,7 +52,7 @@ async fn main() {
         };
 
         // Necesitamos la ruta donde vive el config.json para pasársela a rellenar_config()
-        if let Some(ruta_guardado) = config::obtener_ruta_config() {
+        if let Some(ruta_guardado) = config::obtener_ruta_db() {
             // Una ves que se hicieron las preguntas, se guarda el config.json
             match config::rellenar_config(&config_data, &ruta_guardado) {
                 Ok(()) => println!("Configuración guardada correctamente."),

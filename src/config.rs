@@ -466,19 +466,16 @@ pub fn cargar_config() -> Result<Config, Box<dyn std::error::Error>> {
 }
 
 pub fn obtener_ruta_config() -> Option<PathBuf> {
-    // home_dir() devuelve un Option<PathBuf> porque podría fallar si el entorno está roto
-    if let Some(mut path) = home::home_dir() {
-        // .push() va construyendo la ruta de forma segura añadiendo los separadores / automáticamente
-        path.push(".config");
-        path.push("Anime-Obsidean");
-        path.push("config.json");
-        Some(path)
-    } else {
-        println!("No se pudo determinar el directorio home del usuario.");
-        None
-    }
+    let mut path = obtener_ruta_carpeta_base()?;
+    path.push("config.json");
+    Some(path)
 }
 
+pub fn obtener_ruta_db() -> Option<PathBuf> {
+    let mut path = obtener_ruta_carpeta_base()?;
+    path.push("rust-animelist.db");
+    Some(path)
+}
 /// Menú interactivo para editar la configuración existente.
 pub fn editar_config() {
     // 1. Cargar la configuración actual

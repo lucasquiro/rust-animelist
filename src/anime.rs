@@ -136,7 +136,7 @@ async fn nombre_anime() {
         Err(e) => {eprintln!("Error al realizar la solicitud: {}", e);
         continue;
         },
-    }
+      }
     }
 }
 
